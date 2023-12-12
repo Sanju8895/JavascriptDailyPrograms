@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicate_2</title>
+</head>
+<body>
+    <script>
+        var arr=[10,20,30,40,10,20,50,];
+        let uniqueArr= arr.filter((val, ind)=>{
+            return arr.indexOf(val)=== ind;
+        })
+        console.log("with duplicate",arr)
+        console.log("without duplicate",uniqueArr)
+    </script>
+</body>
+</html>
