@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicate_1</title>
+</head>
+<body>
+    <script>
+        var arr1=[10,20,30,40,10,20,50,];
+        var arr2=[];
+        for(ele of arr1){
+            if(arr2.indexOf(ele)==-1){
+                arr2.push(ele);
+            }
+        }
+        console.log("with duplicate",arr1)
+        console.log("without duplicate",arr2)
+    </script>
+</body>
+</html>
