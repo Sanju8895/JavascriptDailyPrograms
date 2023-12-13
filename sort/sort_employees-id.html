@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Employees by ID</title>
+</head>
+<body>
+    <script>
+        let employees=[];
+        employees[0]={name:"Sanjaya", age:25, salary:5000}
+        employees[2]={name:"Rahul", age:46, salary:6000}
+        employees[3]={name:"Rakesh", age:35, salary:7000}
+        employees[4]={name:"Praksh", age:27, salary:9000}
+
+        let sortByAge= function(emp1, emp2){
+            return emp1.age -emp2.age
+        }
+        employees.sort(sortByAge);
+        console.log(employees)
+    </script>
+</body>
+</html>
