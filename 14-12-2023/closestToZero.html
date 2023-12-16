@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [ -2, 4, 5, -3,10,20,-10]
+        //  function closestToZero(){
+        //     let closest=0;
+        //     for(let i in arr){
+        //         if(closest==0){
+        //             closest=arr[i];
+        //         }else if(arr[i]>0 && arr[i] <= Math.abs(closest)){
+        //             closest= arr[i]
+        //         }else if( arr[i]<0 && -arr[i]<Math.abs(closest)){
+        //            closest= arr[i];
+        //         }  
+        //     }
+        //     return closest;
+        //  }
+        //  result= closestToZero(arr);
+        //  console.log(result)
+
+         function closestToZero1(){
+            let closest= 0;
+             for(let i in arr){
+                if(closest==0){
+                    closest= arr[i];
+                }else if(closest >0 && arr[i]>=Math.abs(closest)){
+                    closest= arr[i]
+                }else if(closest<0 && -arr[i]<Math.abs(closest)){
+                    closest= arr[i]
+                }
+            }
+            return closest
+         }
+         console.log(closestToZero1(arr));
+    </script>
+</body>
+</html>
