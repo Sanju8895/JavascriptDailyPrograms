@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2 {
+            color: black;
+        }
+        #grandparent {
+            background-color: green;
+            width: 300px;
+            height: 300px;
+        }
+        #parent {
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+        #child {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+   
+        <div>
+            <h2>Welcome To GFG</h2>
+            <div id="grandparent">GrandParent
+                <div id="parent">Parent
+                    <div id="child">Child</div>
+                </div>
+            </div>
+        </div>
+     
+        <script>
+            const grandParent = document.getElementById("grandparent");
+            const parent = document.getElementById("parent");
+            const child = document.getElementById("child");
+     
+            grandParent.addEventListener("click", (e) => {
+                console.log("GrandParent");
+            }, { capture: false });
+            parent.addEventListener("click", (e) => {
+                console.log("Parent");
+            }, { capture: false });
+            child.addEventListener("click", (e) => {
+                console.log("Child");
+            }, { capture: false });
+
+            // =================================================================
+
+            // grandParent.addEventListener('click',(e)=>{
+            //     console.log("grandParent")
+            // },{capture:true});
+
+            // parent.addEventListener('click',(e)=>{
+            //     console.log("parent");
+            // },{capture: true});
+            // child.addEventListener('click',(e)=>{
+            //     console.log("Child");
+            // },{capture: true});
+        </script>
+</body>
+</html>

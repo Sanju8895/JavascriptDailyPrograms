@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Call() Apply(), Bind()</h1>
+
+    <script>
+        //  Call
+        // Exa: 1
+        // function sayHi(){
+        //     alert("Hi");
+        //     console.log("This is this value",this);
+        //     console.log(this.name);
+
+        // }
+        //  sayHi()
+        // let obj= {name:"Sanjaya" , Add:"Bangalore"};
+        // console.log(sayHi.call(obj));
+
+        // Exa 2:
+    
+        // let user ={
+        //     name:"sanjaya",
+        //     sayHi1: function(){
+        //         console.log("Hii",this.name)
+        //         console.log(this);
+        //     },
+        // }
+        // user.sayHi1();
+
+        // setTimeout(user.sayHi1(),1000);
+
+        // setTimeout(()=>{user.sayHi1.call(user)},2000);
+
+
+        // Exam 3:
+
+        // let obj1 = {
+        //     a: 10,
+        //     add: function(b){
+        //         console.log(this.a + b);
+        //     }
+        // }
+
+        // let result1 = obj1.add(20);
+
+        // let obj2= {
+        //     a: 5
+        // }
+
+        // let result2 = obj1.add.call(obj2, 20);
+
+        // Apply
+        // function add(a,b){
+        //     console.log(this.x + a+b);
+        // }
+
+        // let num= {
+        //     x : 4
+        // }
+
+        // add();
+        // add.apply(num, [2,6]);
+
+        // Bind()
+
+        function greet(){
+            console.log(this.fname +" "+ this.lname);
+        }
+
+        greet();
+
+
+        let  person = {
+            fname: "sanjaya",
+            lname: "nayak"
+        }
+        greet.call(person);
+        let fullname = greet.bind(person);
+        console.log(fullname());
+
+    </script>
+</body>
+</html>

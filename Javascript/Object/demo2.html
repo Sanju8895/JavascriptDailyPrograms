@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        let users = {
+            "first name" : "sanjaya",
+            "last name" : "nayak",
+            fullname: "sanjaya nayak"
+        }
+
+        console.log(`my name is ${users["first name"]} and last name is ${users["last name"]}`)
+
+        // window.alert(users);
+       let userStr= JSON.stringify(users)
+       let userobj= JSON.parse(userStr);
+        console.log(userStr);
+        console.log(userobj);
+
+        let myname= "fullname";
+        console.log(users[myname]);
+     </script>
+</body>
+</html>
