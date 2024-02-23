@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Arrow Function vs  Regular function
+
+        // D-1: Syntax
+          let multiply= function(a,b){
+            return a*b;
+          }
+
+          let multiply1 = (a,b)=>{
+            return a*b;
+          }
+        // console.log(multiply(4,5));
+        // console.log(multiply1(2,3));
+
+        // D-2: "imlicit" return keyword
+
+        const multiply2= (a,b)=> a*b;
+        // console.log(multiply2(10,20))
+
+        // D-3: arguments
+
+        function fn(){
+            // console.log(arguments);
+        }
+        fn(1,2,3,4,5);
+
+    
+        let argsOfArrowFun= ()=>{ // arguments is not there in arrow function
+            // console.lo/g(arguments)
+        }
+        argsOfArrowFun(10,20,30,40);
+
+        // D-4: 'this' keyword
+        let user ={
+            username:"Sanjaya Nayak",
+            rf : function(){
+                console.log( "this is my name in regular fun:", this.username)
+                console.log("this value in regular fun is :", this)
+              },
+            af: ()=>{
+                console.log("this is my name in arrow fun:", this.username);  // this is not refer to this object;
+                console.log("this value in arrow fun is :", this)
+            }
+        }
+
+        user.rf();
+        user.af();
+        
+
+
+
+    </script>
+</body>
+</html>

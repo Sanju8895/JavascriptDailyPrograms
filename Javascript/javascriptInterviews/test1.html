@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // map, filter and reduce O/P based Quastions;
+        //Q:1 - return names of students in capital
+
+        let students= [
+            {name:"Sanjaya", rollNumber:31, marks: 80},
+            {name:"Rkesh", rollNumber:15, marks: 69},
+            {name:"Rahul", rollNumber:16, marks: 35},
+            {name:"Prakash", rollNumber:7, marks: 55}
+        ]
+
+        // ANS:1
+
+        // let uppercaseStudName=[]
+        // for( i=0; i< students.length; i++){
+        //     uppercaseStudName.push(students[i].name.toUpperCase());
+        // }
+        // console.log(uppercaseStudName)
+
+        // ANS:2
+
+    //    let UpperCaseName= students.map((stud)=> stud.name.toUpperCase());
+    //    console.log(UpperCaseName);
+
+    // Q:2 Returns details only those who scored more then 60 marks
+
+    // let studentsDetails=students.filter((stud)=> {return stud.marks > 60});
+    // console.log(studentsDetails)
+
+    // Q:3 more then 60 marks and rollNumber grater then 15
+    // const studentDetails=  students.filter((stud)=>{ return stud.marks > 60 && stud.rollNumber > 15})
+    // console.log(studentDetails)
+
+    // Q:4 return only names of students who scored more then 60
+    // let studentDetails= students.filter((stud)=>{return stud.marks > 60}).map((stud)=>{ return stud.name.toUpperCase()});
+    // console.log(studentDetails)
+
+//    Q:5 Return total marks for the students with marks  greter than 60. after 20 marks have been added to those who scored less than 60.
+
+    let studentDetails= students.map((stud)=>{
+        if(stud.marks < 60){
+            stud.marks+=20;
+        }
+        return stud;
+    }).filter( (stud)=> stud.marks> 60).reduce((acc, curr)=> acc+ curr.marks,0);
+    console.log(studentDetails);
+
+
+
+    </script>
+</body>
+</html>

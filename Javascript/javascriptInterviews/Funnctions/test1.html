@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function Declarations
+
+        // function square(num){
+        //     return num*num;
+        // }
+        // console.log(square(2));
+
+        // Function Expression;
+
+    //     let ExpressionFun= function(num){
+    //         return num*num;
+    //     }
+    //    console.log(ExpressionFun(5)); 
+
+        //First Class Function
+        // function can treated like a variable. here it can be passed into anathor function
+        //  can be used, manupulated and return from those funtion. everything one variablecan do.
+
+
+    //     function evaluate(num){
+    //         return num*num;
+    //     }
+
+    //    function displayEvaluate(fn){
+    //         console.log("Evaluate value is:", fn(5));
+    //     };
+    //     displayEvaluate(evaluate);
+
+
+        // IIFE 
+
+        // (function(num){ console.log(num*num)})(5);
+
+        // Q:1 O/P based Quation:
+        (function(x){
+            return (function(y){
+                console.log(x);
+            })(2)
+        })(1); 
+
+        // output is: 1
+
+
+
+    </script>
+</body>
+</html>
