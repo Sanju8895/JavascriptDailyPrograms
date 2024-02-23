@@ -7,27 +7,30 @@
 </head>
 <body>
     <script>
-        	// let employees = [
-			// 	{eId:101,name:'deepak',sal:5000},
-			// 	{eId:103,name:'ajay',sal:6000},
-			// 	{eId:102,name:'deepak',sal:8000},
-			// 	{eId:104,name:'manoj',sal:7000}
-			//  ];
+        	let employees = [
+				{eId:101,name:'deepak',sal:5000},
+				{eId:103,name:'ajay',sal:6000},
+				{eId:102,name:'deepak',sal:8000},
+				{eId:104,name:'manoj',sal:7000},
+				{eId:104,name:'manoj',sal:7000}
+			 ];
         
-            // let mySet = new Set();
+            //  let mySet = [...new Set(employees)];
+            //  console.log(mySet); // no
 
-            // hasDuplicate = employees.some((emp)=>{
-            //     return mySet.size === mySet.add(emp.name).size;
-            // })
-            // alert(hasDuplicate)
-
-
-            let arr= [1,2,3,2,4,3];
             let mySet = new Set();
-            hasDuplicate= arr.some((ele)=>{
-                return mySet.size === mySet.add(ele).size
+            hasDuplicate = employees.some((emp)=>{
+                return mySet.size === mySet.add(emp.name).size;
             })
-          alert(hasDuplicate)
+            alert(hasDuplicate)
+
+
+        //     let arr= [1,2,3,2,4,3];
+        //     let mySet = new Set();
+        //     hasDuplicate= arr.some((ele)=>{
+        //         return mySet.size === mySet.add(ele).size
+        //     })
+        //   alert(hasDuplicate)
     </script>
 </body>
 </html>

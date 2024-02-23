@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr= [1,2,3,4,5];
+        const forEachFun=arr.forEach((ele, i)=>{ // forEach will modify original array
+            arr[i]= ele+2;
+        });
+
+        const mapFun= arr.map((ele)=>{ return ele+2}) // will not modify original arr;
+        console.log(arr);
+        console.log(mapFun)
+        console.log(forEachFun)
+    </script>
+</body>
+</html>

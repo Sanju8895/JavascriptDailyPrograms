@@ -19,7 +19,7 @@
         // }
         //  sayHi()
         // let obj= {name:"Sanjaya" , Add:"Bangalore"};
-        // console.log(sayHi.call(obj));
+        // sayHi.call(obj);
 
         // Exa 2:
     
@@ -68,20 +68,20 @@
 
         // Bind()
 
-        function greet(){
-            console.log(this.fname +" "+ this.lname);
-        }
+        // function greet(){
+        //     console.log(this.fname +" "+ this.lname);
+        // }
 
-        greet();
+        // greet();
 
 
-        let  person = {
-            fname: "sanjaya",
-            lname: "nayak"
-        }
-        greet.call(person);
-        let fullname = greet.bind(person);
-        console.log(fullname());
+        // let  person = {
+        //     fname: "sanjaya",
+        //     lname: "nayak"
+        // }
+        // greet.call(person);
+        // let fullname = greet.bind(person);
+        // console.log(fullname());
 
     </script>
 </body>

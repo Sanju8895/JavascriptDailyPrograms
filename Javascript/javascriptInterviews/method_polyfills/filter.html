@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr= [1,2,3,4,5,6,7,8,9,10,11];
+        // let filterArr= arr.filter((ele)=>{return ele%2==0})
+        // console.log(filterArr)
+
+        Array.prototype.myFilter = function(cb){
+            let temp= [];
+            for(let i= 0; i< this.length; i++){
+                if(cb(this[i],i, this)){
+                    temp.push(this[i]);
+                }
+            }
+            return temp;
+        }
+        let filterArr= arr.myFilter((ele)=>{return ele%2==0})
+        console.log(filterArr)
+
+    </script>
+</body>
+</html>

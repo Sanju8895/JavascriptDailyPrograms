@@ -11,15 +11,25 @@
 
     // Exa:1
       function flattenArray(arr) {
-        let flattenedArray = [];
-        arr.forEach((element) => {
-          if (Array.isArray(element)) {
-            flattenedArray = flattenedArray.concat(flattenArray(element));
-          } else {
-            flattenedArray.push(element);
+        // let flattenedArray = [];
+        // arr.forEach((element) => {
+        //   if (Array.isArray(element)) {
+        //     flattenedArray = flattenedArray.concat(flattenArray(element));
+        //   } else {
+        //     flattenedArray.push(element);
+        //   }
+        // });
+        // return flattenedArray;
+
+        let outputArr= [];
+        arr.forEach((ele)=>{
+          if(Array.isArray(ele)){
+            outputArr = outputArr.concat(flattenArray(ele));
+          }else{
+            outputArr.push(ele)
           }
-        });
-        return flattenedArray;
+        })
+        return outputArr;
       }
 
       const result = flattenArray(nestedArray);

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums=[1,2,3,4,5];
+        // let reduceNum= nums.reduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
+        // console.log(reduceNum)
+
+        Array.prototype.myReduce=function(cb,intValue){
+            let accumulator= intValue;
+            for(let i=0; i< this.length; i++){
+                accumulator= accumulator ? cb(accumulator, this[i],i, this): this[i];
+            }
+            return accumulator;
+        }
+        let reduceNum= nums.myReduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
+        console.log(reduceNum)
+
+    </script>
+</body>
+</html>
