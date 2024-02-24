@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var keysArray = ["Name", "mobileNumber", "email", "gender"];
+        var valueArray = ["David", 9876543210, "david@mail.com", "male"];
+
+        function createArrayOfObject(key, val){
+           var obj={};
+           for(i=0;i<key.length;i++){
+            obj[key[i]] = val[i];
+           }
+           return [obj]
+        }
+        let output= createArrayOfObject(keysArray,valueArray)
+        console.log(output);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var singleton = function() {
+        var instance;
+
+  return {
+    getInstance: function() {
+      if (!instance) {
+        instance = new singleton();
+      }
+      return instance;
+    }
+  };
+}();
+
+var mySingleton = singleton.getInstance();
+var anotherSingleton = singleton.getInstance();
+
+console.log(mySingleton === anotherSingleton); // true
+    </script>
+</body>
+</html>

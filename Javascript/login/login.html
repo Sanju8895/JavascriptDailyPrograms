@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Login Form</h1>
+        <form id="loginForm">
+            <label for="username">UserName: </label>
+            <input type="text" id="username" required >
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" required>
+            <br>
+            <button onclick="authenticate()">Login</button>
+        </form>
+        <script>
+         function authenticate() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // clintSide validation
+            if(username.trim() === '' || password.trim() === ''){
+                alert('please enter both username and password');
+            }
+
+            // Used fetch API to send post request
+            fetch('https://fusionauth.io/docs/apis/login', {
+                method: 'POST',
+                headers: {
+                    'content-Type' : 'application/json',
+                },
+                body: JSON.stringify({username,password})
+            })
+            .then(responce => responce.json())
+            .then(data =>{
+                if(data.success){
+                    alert(data.message);
+                }else{
+                    alert(data.message);
+                }
+            })
+            .catch(err=> console.log("Error", err));
+         }
+        </script>
+    </div>
+</body>
+</html>

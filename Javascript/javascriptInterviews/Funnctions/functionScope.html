@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Exa:1
+
+    //  var num1= 20;
+    //      num2= 3;
+
+    //     function multiply(){
+    //         console.log(num1*num2)
+    //     }
+    //     multiply();
+
+
+    //     function getScore(){
+    //         var num1=2;
+    //             num2= 4;
+    //       function add(){
+    //         console.log(num1+num2);
+    //       }
+    //       add();
+    //     }
+
+    //   getScore();
+
+
+    // Exa:2
+
+    // for(var i=0; i<5; i++){
+    //     setTimeout(()=>{
+    //         console.log(i); // 5 for 5 times
+    //     }, i*1000)
+    // }
+
+
+    // for(let i=0; i<5; i++){
+    //     setTimeout(()=>{
+    //         console.log(i); // 0,1,2,3,4
+    //     }, i*1000)
+    // }
+
+//    with var to resolve this issue
+      
+        for(var i=0; i<5; i++){
+            function fn(i){
+                setTimeout(()=>{
+                        console.log(i); // 5 for 5 times
+                }, i*1000);
+            }
+            fn(i);
+          }
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="loginForm">
+            <label for="username">USERNAME :</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">PASSWORD: </label>
+            <input type="password" id="password" id="password">
+            <br>
+            <button type="button" value="submit" onclick="login()"> LOGIN</button>
+        </form>
+    </div>
+
+    <script>
+        function login(){
+        //     var username= document.getElementById('username').value;
+        //     var password = document.getElementById('password').value;
+
+        //     if(username.trim() === '' || password.trim() === ''){
+        //         alert('Please enter username and password')
+        //     }
+
+        //     fetch('http://localhost:8000/auth/login', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type' : 'application/json',
+        //         },
+        //         body: JSON.stringify({username,password}),
+        //     })
+        //     .then(responce => responce.json())
+        //     .then(data =>{
+        //         if(data.success){
+        //             localStorage.setItem("token",data.token)
+        //             alert(data.message);
+        //             console.log("Success",data.message);
+        //         }else{
+        //             alert(data.message);
+        //             console.log("else part",data.message);
+        //         }
+        //     })
+        //     .catch(err => console.error("Error", err));
+
+
+
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if(username.trim() === '' || password.trim()=== ''){
+            alert('Please enter username and password');
+        }
+        fetch('http://localhost:8000/auth/login', {
+            method: "POST",
+            headers: {
+                'Content-Type' :'application/json',
+            },
+            body: JSON.stringify({username, password})
+         })
+         .then(responce => responce.json())
+         .then(data =>{
+            if(data.success){
+                alert(data.message);
+            }else{
+                alert(data.message);
+            }
+         })
+         .catch(err => console.error("Error is ", err));
+         }
+    </script>
+</body>
+</html>

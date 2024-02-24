@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="loginForm">
+            <label for="username">USERNAME :</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">PASSWORD: </label>
+            <input type="password" id="password" id="password">
+            <br>
+            <button type="button" value="submit" onclick="authenticate()"> LOGIN</button>
+        </form>
+    </div>
+    <script>
+        let userObj = [
+            {
+                username: 'sanjaya',
+                password: 'sanjaya123'
+            },
+            {
+                username: 'rahul',
+                password: 'rahul123'
+            },
+            {
+                username: 'promod',
+                password: 'promod123'
+            },
+
+        ]
+       function authenticate(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        // console.log(`username is : ${username} and password is : ${password}`);
+
+        for(let i=0;i<userObj.length;i++){
+            // console.log(userObj[i].username);
+            if(username == userObj[i].username && password == userObj[i].password){
+                console.log(username + " Login successful");
+               
+            } else{
+                console.log('Login failed')
+            }
+           return;
+        }
+        
+       }
+    </script>
+</body>
+</html>

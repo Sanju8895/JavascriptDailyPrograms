@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // funtions bundled together with it's lexcical scope where inner function can acess outer function
+        //   variables
+
+        // EXA:1
+        // function outer(){
+        //     var name= "sanjaya";
+        //     function inner(){
+        //         console.log(name)
+        //     }
+        //     return inner();
+        // };
+        // outer();
+
+        // EXA:2 - time optimization with closure
+
+        // function find(){
+        //     let a= [];
+        //     for(let i=0; i< 100000; i++){
+        //         a[i]=i*i;
+        //         // console.log(a[i])
+        //     }
+        //     return function(index)
+        //     {
+        //       console.log(a[index]);
+        //     }
+        // }
+
+        // let closureIs= find();
+        // console.time('6');
+        // closureIs(6);
+        // console.timeEnd('6');
+
+        // console.time('12');
+        // closureIs (12);
+        // console.timeEnd('12')
+
+        // EXA:3
+        //    function a(){
+        //     for(var i=0; i<5; i++){  
+        //         function fn(i){
+        //             setTimeout(()=>{
+        //                     console.log(i); //  0,1,2,3,4 
+        //             }, i*1000);
+        //         }
+        //         fn(i);
+        //       }
+        //     }
+        //     a()
+
+
+        //EXA: 5- how would you  use a closure to create a private counter;
+
+        function counterFun(){
+            let count = 0;
+            // let count= 0;
+            function add(increment){
+                 count = count + increment;
+            }
+            function retrive(){
+                return count;
+            }
+            return {
+                add,
+                retrive
+            }
+        }
+       let c= counterFun();
+       
+       c.add(10);
+       c.add(5);
+       console.log(c.retrive());
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

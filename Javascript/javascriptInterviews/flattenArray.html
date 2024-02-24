@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    const nestedArray = [5, 4, 3, [2, 1, [3, 9], 10], 10, 15,[20,[30]]];
+
+    // Exa:1
+      function flattenArray(arr) {
+        // let flattenedArray = [];
+        // arr.forEach((element) => {
+        //   if (Array.isArray(element)) {
+        //     flattenedArray = flattenedArray.concat(flattenArray(element));
+        //   } else {
+        //     flattenedArray.push(element);
+        //   }
+        // });
+        // return flattenedArray;
+
+        let outputArr= [];
+        arr.forEach((ele)=>{
+          if(Array.isArray(ele)){
+            outputArr = outputArr.concat(flattenArray(ele));
+          }else{
+            outputArr.push(ele)
+          }
+        })
+        return outputArr;
+      }
+
+      const result = flattenArray(nestedArray);
+      console.log(result);
+
+    // Exa:2
+    // function flattenArray(input){
+    //     let outputArr=[];
+    //    if(Array.isArray(input)){
+    //     outputArr.push(input.flat(input.length));
+    //    } else{
+    //      outputArr= outputArr
+    //    }
+    //    return outputArr.flat();
+    // }
+
+    // let output = flattenArray(nestedArray)
+    // console.log(output);
+
+    </script>
+  </body>
+</html>
