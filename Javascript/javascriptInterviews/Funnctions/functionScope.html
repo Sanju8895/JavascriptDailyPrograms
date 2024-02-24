@@ -47,14 +47,16 @@
     // }
 
 //    with var to resolve this issue
+      
         for(var i=0; i<5; i++){
-            function f1(i){
+            function fn(i){
                 setTimeout(()=>{
-                     console.log(i); // 5 for 5 times
+                        console.log(i); // 5 for 5 times
                 }, i*1000);
-            };
-         }
-        
+            }
+            fn(i);
+          }
+       
 
     </script>
 </body>
