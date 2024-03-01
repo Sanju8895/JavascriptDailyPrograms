@@ -1,0 +1,38 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+.header{
+    width:100%;
+    height:60px;
+    line-height: 60px;
+    margin:auto;
+    text-align: center;
+    background-color: brown;
+    color:#fff;
+}
+
+/* details start */
+.details{
+    display: flex;
+}
+.edit_btn,.update_btn,.delete_btn,.add_btn{
+    padding:5px 20px;
+    /* color:white; */
+    border:none;
+    border-radius: 3px;
+}
+.edit_btn{
+    background-color:yellow;
+}
+.delete_btn{
+    background-color:red;
+}
+.update_btn,.add_btn{
+    background-color: green;
+
+}
+input{
+    padding:3px 0px;
+}
