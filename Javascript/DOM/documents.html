@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="input">
+    <p class="para">This is a para</p> -->
+
+
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+
+    <script>
+        let input= document.querySelector("#input");
+        var para=document.querySelector('.para');
+
+        // changing content within elements
+        // para.innerHTML= "This is a new para";
+        // para.innerText= "this is a new para with inner text";
+        // para.textContent="This is a new para with inner content";
+
+
+        // Changing attrinbute with in elements
+        // para.style.color= "red";
+        // para.style.backgroundColor= "green";
+        // para.style.weight= "bold";
+        // para.style.fontSize = "40px";
+        // console.log(para);
+
+        // input.type="password";
+        //  input.setAttribute("class","myInput");
+        //  let inputAttr= input.getAttribute('class');
+        //  console.log(inputAttr);
+        // console.log(input);
+        // Adding and deleting Elements
+
+
+        let myDiv= document.querySelector("#div1");
+        let newPara= document.createElement("p");
+        let newText= document.createTextNode("This is a anathor custom paraghraph ");
+        newPara.appendChild(newText);
+        myDiv.appendChild(newPara)
+        myDiv.lastChild.setAttribute('id','p3');
+        
+    </script>
+</body>
+</html>
