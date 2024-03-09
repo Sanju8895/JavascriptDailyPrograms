@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form>
+           First number: <input type="number" id="fNum">
+           <br><br>
+           second number: <input type="number" id="lNum">
+           <br>
+           <button type="submit" class="btn" id="+">+</button>
+           <button type="submit" class="btn" id="-">-</button>
+           <button type="submit" class="btn" id="*">*</button>
+           <button type="submit" class="btn" id="/">/</button>
+           <h3>Result: <span id="result"></span></h3>
+        </form>
+    </div>
+
+    <script>
+       
+      const form= document.querySelector('form');
+      console.log(form);
+      form.addEventListener('submit', function(e){
+          e.preventDefault();
+     
+      let fNum= parseInt(document.querySelector('#fNum').value);
+      let lNum= parseInt(document.querySelector('#lNum').value);
+    //   let result=  
+      let output = document.querySelector('#result').innerText= result;
+      console.log(fNum,lNum);
+
+      })
+
+
+    </script>
+</body>
+</html>
