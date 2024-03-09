@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[10,2,34,40,4];
+        
+        // This is for find minmun Val from an Array
+        let minVal = arr[0];
+        for(item of arr){
+            if(item < minVal){
+               minVal= item;
+            }
+        }
+        console.log("This is min Value from an array :",minVal);
+
+        // This is for find max Value from an array
+
+        maxVal= arr[0];
+        for(item of arr){
+            if(item >  maxVal){
+                maxVal= item;
+            }
+        }
+        console.log("This is max  value form an array :",maxVal);
+    </script>
+</body>
+</html>
