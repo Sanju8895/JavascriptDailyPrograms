@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     let arr= [1,2,3,5,,2,3,7,12]
+      //     Array.prototype.mySort = function(cb){
+      //         let temp =[];
+      //         for(i=0; i< this.length; i++){
+      //            temp.push(cb((a = this[i],b)=>{
+      //             if(a>b){
+      //                 return -1;
+      //             }else{
+      //                 return 1;
+      //             }
+      //            }))
+      //         }
+      //     }
+
+      // console.log(arr.mySort());
+
+      let arr = [1, 2, 3, 5, 2, 3, 7, 12];
+
+
+      Array.prototype.mySort = function(cb){
+        let temp= this.slice();
+         for(let i=0; i< temp.length; i++){
+            for(let j=0; j< temp.length-1-i; j++){
+                if(cb(temp[j], temp[j+1])> 0){
+                let tempVal= temp[j];
+                temp[j]= temp[j+1];
+                temp[j+1]= tempVal;
+                }
+            }
+         }
+        return temp;
+      }
+
+      console.log(arr.mySort((a,b)=> {return a-b}));
+
+    //   Array.prototype.mySort = function (cb) {
+    //     let temp = this.slice(); // Create a copy of the original array
+    //     for (let i = 0; i < temp.length; i++) {
+    //       for (let j = 0; j < temp.length - 1 - i; j++) {
+    //         if (cb(temp[j], temp[j + 1]) > 0) {
+    //           let tempValue = temp[j];
+    //           temp[j] = temp[j + 1];
+    //           temp[j + 1] = tempValue;
+    //         }
+    //       }
+    //     }
+    //     return temp; // Return the sorted array
+    //   };
+
+    //   console.log(arr.mySort((a,b)=> {return a-b}));
+    </script>
+  </body>
+</html>

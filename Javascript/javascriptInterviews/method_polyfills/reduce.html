@@ -7,19 +7,30 @@
 </head>
 <body>
     <script>
-        let nums=[1,2,3,4,5];
+        let nums=[1,2,3,4,5,6];
         // let reduceNum= nums.reduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
         // console.log(reduceNum)
 
-        Array.prototype.myReduce=function(cb,intValue){
-            let accumulator= intValue;
-            for(let i=0; i< this.length; i++){
-                accumulator= accumulator ? cb(accumulator, this[i],i, this): this[i];
-            }
-            return accumulator;
+    Array.prototype.myReduce = function(cb,initVal){
+        let accumulator = intVal;
+        for(i = 0; i< this.length; i++){
+            accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
         }
-        let reduceNum= nums.myReduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
-        console.log(reduceNum)
+     return accumulator;
+    }
+
+
+    let result= nums.myReduce((acc, curr)=> {return acc+curr}, intVal=0);
+    console.log(result);
+        // Array.prototype.myReduce=function(cb,intValue){
+        //     let accumulator= intValue;
+        //     for(let i=0; i< this.length; i++){
+        //         accumulator= accumulator ? cb(accumulator, this[i],i, this): this[i];
+        //     }
+        //     return accumulator;
+        // }
+        // let reduceNum= nums.myReduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
+        // console.log(reduceNum)
 
     </script>
 </body>
