@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+
+        // // sum of All Elements
+        // const sumOfAllEle = arr.reduce((acc, curr)=> acc+ curr);
+        // console.log(sumOfAllEle);
+
+        // custom Sub
+    //     function sumOfElement(input){
+    //         let total = 0;
+    //        for(let i = 0; i< input.length; i++){
+    //         total = total + input[i];
+    //        }
+    //        return total;
+    // }
+    // console.log(sumOfElement(arr))
+
+
+    // Reduce Polyfils
+    // Array.prototype.myReduce = function(cb, initialValue){
+    //     let acc = initialValue;
+    //     for(let i = 0 ; i< this.length; i++){
+    //         acc = acc ? cb(acc, this[i], i, this) : this[i];
+    //     }
+    //     return acc;
+    // }
+    // let sumWithCustomReduce = arr.myReduce((a, b)=> a+b, 0);
+    // console.log(sumWithCustomReduce, "custome reduce");
+
+    // ================================================
+
+    // Square each elements
+
+    // function squareElement(input){
+    //     let temp = [];
+    //       for(let i = 0 ; i< input.length; i++){
+    //         temp.push(input[i] * input[i]) ;
+    //       }
+    //     return temp;
+    // }
+    // console.log(arr);
+    // console.log(squareElement(arr));
+
+    // with map
+    // let squares = arr.map(num=> num*num);
+    // console.log(squares)
+
+    // ==============================================
+
+    // flaten array and its neasted array
+    // let  item = [1,2,3,[4,5,6,[7,8,9,[10,11],12,13],[14,15]]];
+    // let onelavelFlat = item.flat();
+    // console.log(onelavelFlat, "one lavel flat");
+
+    // soolved with recursive function 
+
+    // function flatenArr(input){
+    //  let result = [];
+    //      for(data in input){
+    //         if(Array.isArray(input[data])){
+    //             result = result.concat(flatenArr(input[data]));
+    //         }else{
+    //             result.push(input[data]);
+    //         }
+    //      }
+    //  return result;
+    // }
+    // console.log(flatenArr(item));
+
+    // let flatenArray = item.flat(Infinity);
+    // console.log(flatenArray, "flaten with infinity");
+
+    // Remove all false value
+
+    // const falsyArr = [0, 1, false, 2, "", 3];
+    // let removeFalseValue = falsyArr.filter(Boolean);
+    // console.log(removeFalseValue,"remove false")
+
+    // let removeFalsy = falsyArr.filter((ele)=>{
+    //     return ele ;
+    // });
+    // console.log(removeFalsy,"remove");
+
+    // find common elements
+
+    // const arr1 = [1, 2, 3];
+    // const arr2 = [2, 3, 4];
+
+    // let commonElement = arr1.filter((ele)=> arr2.includes(ele));
+    // console.log(commonElement,"found common")
+
+
+    // Group an array elements
+
+    // const groupArr = [1.2, 2.3, 1.4, 3.1];
+
+    // function groupArrFunction(input){
+    //     let result = {};
+    //     input.forEach((ele, ind)=>{
+    //         let key = Math.floor(ele).toString();
+    //         if(!result[key]){
+    //              result[key] = []
+    //         }
+
+    //             result[key].push(ele)
+            
+    //     })
+
+    //     return result;
+    // }
+
+    // console.log(groupArrFunction(groupArr))
+
+
+    // Find first even number
+
+    // let firstEven = arr.find( (ele)=>{ return ele %2 == 0})
+    //     console.log(firstEven);
+
+    // find last even number
+    // let lastEven = arr.reverse().find((ele)=> {return ele %2 === 0});
+    // console.log(lastEven);
+
+    // Covert an array of strings to uppercase
+    // const arr1 = ["hello", "world"];
+    // let upperCaseString = arr1.map((ele)=> ele.toUpperCase());
+    // console.log(upperCaseString);;
+    // To Lower case
+    // const toLowercase = arr1.map((ele)=> ele.toLowerCase());
+    // console.log(toLowercase);
+
+
+    // filter strings loger then a given length
+
+    // const arr1 = ["short", "longer", "longest"];
+    // const logerString = arr1.filter((ele)=> ele.length > 5);
+    // console.log(logerString);
+
+
+    // Generate Array of Even Numbers up to N
+    // function generateEvenArray(input){
+    //     let result = [];
+    //    for(let i=1; i<= input; i++){
+    //      if(i %2 == 0){
+    //         result.push(i);
+    //      }
+    //    }
+    //     return result;
+    // }
+    // console.log(generateEvenArray(10));
+
+    function generateEvenArray(n){
+        return Array.from({length:n/2},(_, i)=> (i+1)*2)
+    }
+
+    console.log(generateEvenArray(10));
+
+
+    </script>
+</body>
+</html>

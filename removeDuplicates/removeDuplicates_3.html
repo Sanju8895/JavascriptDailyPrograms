@@ -9,7 +9,14 @@
     <script>
         var arr=[10,20,30,40,10,20,50,];
         let uniqueArr= [...new Set(arr)]
-         
+
+        let reaptedNum = arr.filter((val, ind)=>{
+            let num = arr.indexOf(val) !== arr.lastIndexOf(val);
+            return num;
+            // let result= [...new Set(num)];
+            // return result;
+        })
+         console.log(reaptedNum, "repeated num");
         console.log("with duplicate",arr)
         console.log("without duplicate",uniqueArr)
     </script>

@@ -59,25 +59,60 @@
 
         //EXA: 5- how would you  use a closure to create a private counter;
 
-        function counterFun(){
-            let count = 0;
-            // let count= 0;
-            function add(increment){
-                 count = count + increment;
+    //     function counterFun(){
+    //         let count = 0;
+    //         // let count= 0;
+    //         function add(increment){
+    //              count = count + increment;
+    //         }
+    //         function retrive(){
+    //             return count;
+    //         }
+    //         return {
+    //             add, //public
+    //             retrive
+    //         }   
+    //     }
+
+
+    //    let c = counterFun();
+       
+    //    c.add(10);
+    //    c.add(5);
+    //    console.log(c.retrive());
+
+
+        // EXA:2 - time optimization with closure
+
+        function find(){
+            let a= [];
+            for(let i=0; i< 100000; i++){
+                a[i]=i*i;
+                // console.log(a[i])
             }
-            function retrive(){
-                return count;
-            }
-            return {
-                add,
-                retrive
+            return function(index) 
+            {
+              console.log(a[index]);
             }
         }
-       let c= counterFun();
-       
-       c.add(10);
-       c.add(5);
-       console.log(c.retrive());
+
+        
+        // console.time('6');
+        // find(6);
+        // console.timeEnd('6');
+
+        // console.time('12');
+        // find(12);
+        // console.timeEnd('12')
+
+        let closureIs = find();
+        console.time('6');
+        closureIs(6);
+        console.timeEnd('6');
+
+        console.time('12');
+        closureIs (12);
+        console.timeEnd('12')
 
 
 

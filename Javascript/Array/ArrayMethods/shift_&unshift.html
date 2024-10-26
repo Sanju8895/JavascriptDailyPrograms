@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=["sanju","rahul","Rajesh"];
+        //unshift - add begning of an array
+        //shift - remove begning of an array
+        arr.unshift("sakti");
+        console.log(arr);
+        arr.shift();
+        console.log(arr);
+
+
+        Array.prototype.myUnshift = function(arguments){
+            this[0]
+            return this[this.length++]= arguments
+           
+            
+        }
+        arr.myUnshift("sakti");
+        console.log(arr);
+    </script>
+</body>
+</html>

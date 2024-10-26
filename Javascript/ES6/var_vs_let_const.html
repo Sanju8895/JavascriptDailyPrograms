@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function scope
+        var a=10; // yes
+        var a= 20;  // yes
+       console.log(a);
+
+       // block scope
+        let b= 15;  //yes
+        // let b= 25;  // no
+         b= 25;  // yes
+        console.log(b);
+
+        // block scope
+        const  c= 30;
+            //    c= 40;
+               console.log(c);
+    </script>
+</body>
+</html>

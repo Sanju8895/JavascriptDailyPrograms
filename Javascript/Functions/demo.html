@@ -12,27 +12,71 @@
         //     return window.alert("I am function declaration")
         // }
         // fn()
+
+
         // function expression/ anonymous function
         // var myFn= function(){
         //     return window.alert("I am function Expression")
         // }
-        //    myFn();
+        //  myFn();
+
         // IIFE- immediate invoked function expression/ self invoked function
         //  (function(){return window.alert("I am IIFE")})()
+
+
+
         // Arrow function
-        // var myFn=()=>{
-        //     return window.alert("I am Arrow function ")
+        // var myFn =  () => {return window.alert("I am Arrow function")}
+        // myFn();
+
+
+
+         
+
+
+        // Ffunction curring
+
+        // regular function example
+        // function sum(a,b){
+        //     return a+b;
+        //  }
+        //   sum(4,5)
+
+        //   curring function example
+        // function add(a){
+        //      return function(b){
+        //         return function(c){
+        //             console.log ("curring result",a+b+c);
+        //         }
+        //      }
         // }
-        // myFn()
+        // add(2)(3)(4);
 
-    //   Global Execution Context
 
-     var a= 10
+        // pure and Impure function
 
-     function fn(){
-        console.log(a);
-     }
-     fn();
+        // pure function conditions
+        //  * always return somthing;
+        //  * pure function only accept it's own inputs;
+        //  * this should not mudify or access global scope;
+
+        // let a= 10;
+
+        // function eval(a,b){
+        //     var result = a+b;
+        //     console.log(result);
+        //     return result;
+        // }
+        // console.log( "global a value:",a);
+        // eval(2,5);  pure
+        // eval(a,5);  impure
+
+
+
+
+
+
+
 
 
 

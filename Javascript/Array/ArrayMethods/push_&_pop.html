@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=["sanju","rahul","Rajesh"];
+        //push -add end of an array
+        //pop - remove end of an array
+        // arr.push("sakti");
+        // console.log(arr);
+        // arr.pop();
+        // console.log(arr);
+
+
+        // push polyfills
+
+        // Array.prototype.myPush = function(val){
+        //     let length = this.length;
+        //     let tempArr= [];
+        //     //     tempArr[length+1]= val;
+
+        //     for(let i=0; i< length; i++){
+        //        tempArr[i] = this[i];
+    
+        //     }
+        //    return  tempArr[tempArr.length+1]= val;
+        // }
+
+        Array.prototype.myPush = function(arguments){
+               return  this[this.length++]= arguments; 
+        }
+
+
+    
+
+        arr.myPush("a");
+        console.log(arr);
+
+         Array.prototype.myPop = function(arguments){
+               return  this[this.length++]= arguments; 
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

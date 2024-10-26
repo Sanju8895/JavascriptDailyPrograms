@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          let arr = [1,2,3,4,5,6];
+
+        //   let result= arr.filter((ele)=>{return ele%2==0});
+        //   console.log(result);
+
+        Array.prototype.myfilter = function(cb){
+        let tempArr = [];
+        for(let i=0; i< this.length; i++){
+            //  console.log("elements :",this[i], "Index :", i, "this Array :", this;
+           if(cb(this[i],i,this)){
+            tempArr.push(this[i])
+           }
+
+        }
+        return tempArr;
+    }
+
+    let result= arr.myfilter((ele)=>{return ele%2==0});
+    console.log(result);
+
+
+
+
+    </script>
+</body>
+</html>
