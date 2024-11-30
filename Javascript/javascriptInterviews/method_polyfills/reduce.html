@@ -11,27 +11,66 @@
         // let reduceNum= nums.reduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
         // console.log(reduceNum)
 
-    Array.prototype.myReduce = function(cb,initVal){
-        let accumulator = intVal;
-        for(i = 0; i< this.length; i++){
-            accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+    // Array.prototype.myReduce = function(cb,initVal){
+    //     let accumulator = intVal;
+    //     for(i = 0; i< this.length; i++){
+    //         accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+    //     }
+    //  return accumulator;
+    // }
+
+
+    // let result= nums.myReduce((acc, curr)=> {return acc+curr}, intVal=0);
+    // console.log(result);
+        Array.prototype.myReduce=function(cb,intValue){
+            let accumulator= intValue;
+            for(let i=0; i< this.length; i++){
+                accumulator= accumulator ? cb(accumulator, this[i],i, this): this[i];
+            }
+            return accumulator;
         }
-     return accumulator;
-    }
+        let reduceNum= nums.myReduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
+        console.log(reduceNum)
 
 
-    let result= nums.myReduce((acc, curr)=> {return acc+curr}, intVal=0);
-    console.log(result);
-        // Array.prototype.myReduce=function(cb,intValue){
-        //     let accumulator= intValue;
-        //     for(let i=0; i< this.length; i++){
-        //         accumulator= accumulator ? cb(accumulator, this[i],i, this): this[i];
-        //     }
-        //     return accumulator;
-        // }
-        // let reduceNum= nums.myReduce(function cb(acc, curr, i, arr){ return acc+curr},intVal=0);
-        // console.log(reduceNum)
+        // Breaf about reduce method
 
+        //Syntax
+    //    let arr1 = [1,2,3,4,5];
+    //    let reduceMethod = arr1.reduce((acc, cuur, index, thisArr)=>{
+    //     console.log(acc, "Accumulator");
+    //     console.log(cuur,"current value");
+    //     console.log(index, "index of an array");
+    //     console.log(thisArr, "this array");
+
+    //      return acc+cuur;
+    //    });
+    //    console.log(reduceMethod);
+
+
+       let flatenArray = [1,2,3,[4,5,[6,7],[8,9,[10,11,[12,13]]]],13,14];
+    //    let flatenArrElements = flatenArray.flat(Infinity);
+    //    console.log(flatenArrElements," with infinity");
+
+    // function flatenArrElemt1(input){
+    //     let result = [];
+    //     input.forEach((ele, ind)=>{
+    //         if(Array.isArray(ele)){
+    //             result = result.concat(flatenArrElemt1(ele));
+    //         }else{
+    //             result.push(ele);
+    //         }
+    //     })
+    //     return result;
+    // }
+    // console.log(flatenArrElemt1(flatenArray), "with recursion way");
+
+    // with redule method
+
+    const arrays = [1,2,3,[4,5,[6,7],[8,9,[10,11,[12,13]]]],13,14];
+const flattened = arrays.reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);
+console.log(flattened);
+ 
     </script>
 </body>
 </html>
