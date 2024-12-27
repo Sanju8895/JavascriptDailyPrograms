@@ -11,18 +11,18 @@
         // let filterArr= arr.filter((ele)=>{return ele%2==0})
         // console.log(filterArr)
 
-        Array.prototype.MyFilter= function(cb){
-            let temp= [];
-            for(i=0; i< this.length; i++){
-                if(cb(this[i], i, this)){
-                    temp.push(this[i])
-                }
-            }
-            return temp;
-        }
+        // Array.prototype.MyFilter= function(cb){
+        //     let temp= [];
+        //     for(i=0; i< this.length; i++){
+        //         if(cb(this[i], i, this)){
+        //             temp.push(this[i])
+        //         }
+        //     }
+        //     return temp;
+        // }
 
-        let filterArray= arr.MyFilter(ele => ele %2==0);
-        console.log(filterArray);
+        // let filterArray= arr.MyFilter(ele => ele %2==0);
+        // console.log(filterArray);
 
 
 
@@ -42,6 +42,36 @@
         // let filterArr= arr.myFilter((ele)=>{return ele%2==0})
         // console.log(filterArr)
 
+
+
+        // Array.prototype.myFilter = function(cb){
+        //     let temp = [];
+        //     for(let i= 0; i<this.length; i++){
+        //         if(cb(this[i], i, this)){
+        //             temp.push(this[i]);
+        //         }
+        //     }
+
+        //     return temp;
+        // }
+
+        // let customFilter = arr.myFilter((ele, i, arr)=>{ return ele%2 == 0});
+        // console.log(customFilter);
+
+
+        Array.prototype.myFilter = function(cb){
+            let temp = [];
+
+            for(let i= 0;i<this.length; i++){
+                if(cb(this[i], i,this)){
+                    temp.push(this[i]);
+                }
+            }
+            return temp;
+        }
+
+        let customFilter = arr.myFilter((ele, i, arr)=>{ return ele > 10});
+        console.log(customFilter);
 
     </script>
 </body>
