@@ -59,19 +59,37 @@
         // console.log(customFilter);
 
 
-        Array.prototype.myFilter = function(cb){
-            let temp = [];
+        // Array.prototype.myFilter = function(cb){
+        //     let temp = [];
 
-            for(let i= 0;i<this.length; i++){
-                if(cb(this[i], i,this)){
+        //     for(let i= 0;i<this.length; i++){
+        //         if(cb(this[i], i,this)){
+        //             temp.push(this[i]);
+        //         }
+        //     }
+        //     return temp;
+        // }
+
+        // let customFilter = arr.myFilter((ele, i, arr)=>{ return ele > 10});
+        // console.log(customFilter);
+
+
+        // Custom Filter method
+        Array.prototype.customFilter = function(cb){
+            let temp = [];
+            for(let i = 0; i< this.length; i++){
+                if(cb(this[i], i, this)){
                     temp.push(this[i]);
                 }
             }
             return temp;
         }
 
-        let customFilter = arr.myFilter((ele, i, arr)=>{ return ele > 10});
-        console.log(customFilter);
+        let findEvenNum = arr.customFilter((val)=> {return val%2 == 0});
+        console.log(findEvenNum, "Even Numbers");
+
+
+
 
     </script>
 </body>
