@@ -1,13 +1,10 @@
-let str= "sanjaya kumar nayak";
+let str = "sanjaya kumar nayak";
 
-let hashTagName = (str)=>{
-//    let result = [];
-//    for(let i = 0; i< str.length; i++){
-//     result.push("#",str[i][0].toUpperCase(),str.slice(0));
-//    }
-//    console.log(result);
-
-let words= str.split(" ");
+let hashTagName = (str) => {
+   let word = str.split(" ").map((ele)=>{
+      return ele[0].toUpperCase()+ele.slice(1) ;
+   });
+   console.log(`#${word.join("")}`);
 
 }
 hashTagName(str);
