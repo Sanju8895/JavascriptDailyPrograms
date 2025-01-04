@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call, Apply and Bind Functions</title>
+</head>
+<body>
+    <h1>Call, Apply and Bind function in Javascript:</h1>
+    <p>These function are used to changes the context of this. This methos are especially usefull when working
+        with Object-oriented code or handling different function context
+    </p>
+    <script>
+        //Call() examples: call metod invokes a function with specified this value and individual arguments
+         // passed as separate arguments. its alows to borrowfrom one object and invoke them in the context of anthor.
+
+         let obj ={
+            name :"Sanjaya"
+         }
+
+         function geetings(){
+           console.log(`Hello ${this.name}`);
+         }
+
+         geetings.call(obj);
+
+         // Apply(): used to invoke a function with a specifed this value andarguments provided as an array
+         //or an array-like object.it serve a similar to call but its ability to accept an arrayof arguments.
+         
+         function greet(){
+            console.log(`Hello ${this.name}`);
+         }
+
+         const person = {
+            name : "Sanjaya Kumar"
+         };
+
+         greet.apply(person);
+
+
+        //  ==========================
+        const numbers = [4,5,6,7,8,9];
+        const max= Math.max.apply(null, numbers);
+        console.log(max);
+
+
+        //Bind(): The bind methid is used to create new function with a specified this value and optional preset
+        //arguments. this new function, often refered to as a "bound function" retain the same code bodyas the original function but
+        //operates with the predified context and arguments.
+        
+        const person1 = {
+            name: "Sanjaya Kumar Nayak"
+        }
+
+        function greet1(){
+            console.log(`Hello ${this.name}`);
+        }
+
+        const printName = greet1.bind(person1);
+        printName();
+    </script>
+</body>
+</html>
