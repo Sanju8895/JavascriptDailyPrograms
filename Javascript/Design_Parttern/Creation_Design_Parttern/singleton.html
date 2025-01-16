@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  Singleton Pattern
+
+        // Purpose: Ensures a class has only one instance and provides a global point of access to it.
+        // Use Cases:
+        // Configuration classes
+        // Logging
+        // Database connections
+        // Key Concept: A private constructor, a static instance, and a static method to get the instance.
+
+        class Logger {
+            constructor() {
+                if (Logger.instance) {
+                    return Logger.instance;
+                }
+                this.logs = [];
+                Logger.instance = this;
+            }
+
+            log(message) {
+                this.logs.push(message);
+                console.log(`Log added: ${message}`);
+            }
+
+            getLogs() {
+                return this.logs;
+            }
+        }
+
+        const logger1 = new Logger();
+        const logger2 = new Logger();
+
+        logger1.log("First log message");
+        logger2.log("Second log message");
+
+        console.log(logger1 === logger2); // true
+        console.log(logger1.getLogs());
+
+
+
+    </script>
+</body>
+
+</html>

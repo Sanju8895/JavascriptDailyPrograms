@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <script>
-        // for(let i=0;i < 6;i++ ){
-        //    setTimeout(()=>{
-        //     console.log(i)
-        //    },1000)
-        // }
+  <script>
+    //      let input = [1, 2, 3, 4, 5]
 
+    // function outputArr(input){
+    //   let n = input.length;
+    //   const totalProduct = input.reduce((acc, curr)=> acc*curr, 1);
+    //   return input.map(num=> totalProduct/num);
+    // }
 
-        function outer(){
-            var x= 10;
-           function inner(){
-            console.log(x);
-           }
-          return inner;
-        }
+    // console.log(outputArr(input))
 
-      let outerFunc =  outer();
-      outerFunc();
+    function productExceptSelf(nums) {
+      const n = nums.length;
+      const totalProduct = nums.reduce((acc, num) => acc * num);
+      return nums.map(num => totalProduct / num);
+    }
 
-
-    </script>
+    const input = [1, 2, 3, 4,5];
+    console.log(productExceptSelf(input));
+  </script>
 </body>
+
 </html>
