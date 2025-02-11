@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const EventEmitter = require('events');
+
+        // class myObserver extends EventEmitter {}
+
+
+        // const myObserver = new myObserver();
+
+        // myObserver.on("message", (data)=>{
+        //     console.log("Observere 1 received data:", data);
+        // });
+
+        // myObserver.on("message", (data)=>{
+        //     console.log("Observere 2 received:", data)
+        // });
+
+        // myObserver.emit("message", "Hello fromEventEmitter!")
+
+
+        const EventEmitter = require('events');
+
+        class MyObserver extends EventEmitter { }
+
+        const myObserver = new MyObserver();
+
+        myObserver.on("message", (data) => {
+            console.log("Observer 1 received:", data);
+        });
+
+        myObserver.on("message", (data) => {
+            console.log("Observer 2 received:", data);
+        });
+
+        myObserver.emit("message", "Hello from EventEmitter!");
+    </script>
+</body>
+
+</html>

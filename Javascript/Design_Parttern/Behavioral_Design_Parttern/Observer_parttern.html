@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Observable {
+            constructor(){
+                this.observers = [];
+
+            }
+
+            subscribe(observer){
+                this.observers.push(observer)
+            }
+
+            unsubscribe(observer){
+                this.observers.filter(obs=> obs !== observer);
+            }
+
+            notify(data){
+                this.observers.forEach(observer => observer(data));
+            }
+        }
+
+
+        const observable = new Observable();
+
+        const observer1 = data => console.log(`Observer 1 ${data}`);
+        const observer2 = data => console.log(`Observer 2 ${data}`);
+
+
+        observable.subscribe(observer1);
+        observable.subscribe(observer2);
+
+        observable.notify("Event Triggered");
+
+        observable.unsubscribe(observer1);
+
+        observable.notify("Anathor Event")
+
+
+    </script>
+</body>
+</html>
